@@ -1,6 +1,20 @@
-# admin vite template
+# Awesome Starter
 
-参考初始化工具[degit](https://github.com/Rich-Harris/degit)
+## Why do you use this template
+
+This template is a simplest solution to start up an new SPA.
+
+## What is the key web framework for this template
+
+- [React](https://react.dev/)
+- [React Router](https://reactrouter.com/en/main)
+- [antd-mobile](https://mobile.ant.design/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## Start Up
+
+Please use [degit](https://github.com/Rich-Harris/degit) to download template
 
 ```bash
 mkdir your-project-name
@@ -12,29 +26,28 @@ npx degit brandonxiang/vite-antd-mobile-starter
 npx degit brandonxiang/vite-antd-mobile-starter your-project-name
 ```
 
-### 开发
+## How to Develop
 
 ```shell
-yarn
+pnpm i
+```
 
-npm run start
+```shell
+pnpm run dev
 
 # http://localhost:3000/
 ```
 
-### 构建
+## How to Build
 
 ```shell
 # live
-npm run build
-
-# uat
-npm run build:uat
-
-# test
-npm run build:test
+pnpm run build
 ```
 
-### git commit
+## Project Management
 
-[@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#rules)
+- [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#rules)
+- [huksy](https://typicode.github.io/husky/)
+- [eslint](https://eslint.nodejs.cn/)
+- [prettier](https://prettier.io/)

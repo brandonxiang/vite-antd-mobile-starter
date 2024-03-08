@@ -13,7 +13,7 @@ export default defineConfig({
         },
       },
     },
-    cssMinify: 'esbuild'
+    cssMinify: 'lightningcss'
   },
   plugins: [
     react(),
