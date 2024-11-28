@@ -6,7 +6,7 @@ import {
   useNavigate,
   useLocation,
   BrowserRouter,
-} from "react-router-dom";
+} from "react-router";
 import {
   AppOutline,
   MessageOutline,
