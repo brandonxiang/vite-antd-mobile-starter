@@ -5,11 +5,20 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tsEslint from 'typescript-eslint'
+import reactPlugin from 'eslint-plugin-react'
 
 export default tsEslint.config(
-  { ignores: ['dist'] },
   {
-    extends: [js.configs.recommended, ...tsEslint.configs.recommended],
+    ignores: ['dist/', 'node_modules/'],
+  },
+  {
+    extends: [
+      ...tsEslint.configs.recommended,
+      js.configs.recommended, 
+      reactPlugin.configs.flat.recommended,
+      reactPlugin.configs.flat['jsx-runtime']
+
+    ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
@@ -25,6 +34,12 @@ export default tsEslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      quotes: [2, 'single'],
+      semi: ["error", "always"],
+      camelcase: 'off',
+      'no-async-promise-executor': 1,
+      'no-empty': 1,
+      "@typescript-eslint/no-explicit-any": 1,
     },
   },
 )

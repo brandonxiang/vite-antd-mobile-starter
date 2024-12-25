@@ -1,5 +1,5 @@
 function PersonalCenter() {
-  return <div>我的</div>
+  return <div>我的</div>;
 }
 
-export default PersonalCenter
+export default PersonalCenter;

@@ -1,25 +1,25 @@
-import { FC, lazy, Suspense } from "react";
-import { NavBar, TabBar } from "antd-mobile";
+import { FC, lazy, Suspense } from 'react';
+import { NavBar, TabBar } from 'antd-mobile';
 import {
   Route,
   Routes,
   useNavigate,
   useLocation,
   BrowserRouter,
-} from "react-router";
+} from 'react-router';
 import {
   AppOutline,
   MessageOutline,
   UnorderedListOutline,
   UserOutline,
-} from "antd-mobile-icons";
+} from 'antd-mobile-icons';
 
-import styles from "./index.module.css";
-import { PageLoading } from "../components/page-loading";
-const Home = lazy(() => import("../pages/home"));
-const Todo = lazy(() => import("../pages/todo"));
-const Message = lazy(() => import("../pages/message"));
-const PersonalCenter = lazy(() => import("../pages/personal-center"));
+import styles from './index.module.css';
+import { PageLoading } from '../components/page-loading';
+const Home = lazy(() => import('../pages/home'));
+const Todo = lazy(() => import('../pages/todo'));
+const Message = lazy(() => import('../pages/message'));
+const PersonalCenter = lazy(() => import('../pages/personal-center'));
 
 const Footer: FC = () => {
   const navigate = useNavigate();
@@ -33,23 +33,23 @@ const Footer: FC = () => {
 
   const tabs = [
     {
-      key: "/home",
-      title: "首页",
+      key: '/home',
+      title: '首页',
       icon: <AppOutline />,
     },
     {
-      key: "/todo",
-      title: "待办",
+      key: '/todo',
+      title: '待办',
       icon: <UnorderedListOutline />,
     },
     {
-      key: "/message",
-      title: "消息",
+      key: '/message',
+      title: '消息',
       icon: <MessageOutline />,
     },
     {
-      key: "/me",
-      title: "我的",
+      key: '/me',
+      title: '我的',
       icon: <UserOutline />,
     },
   ];
