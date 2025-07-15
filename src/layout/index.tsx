@@ -1,11 +1,9 @@
-import { FC, lazy, Suspense } from 'react';
+import { FC, Suspense } from 'react';
 import { NavBar, TabBar } from 'antd-mobile';
 import {
-  Route,
-  Routes,
+  Outlet,
   useNavigate,
   useLocation,
-  BrowserRouter,
 } from 'react-router';
 import {
   AppOutline,
@@ -16,10 +14,6 @@ import {
 
 import styles from './index.module.css';
 import { PageLoading } from '../components/page-loading';
-const Home = lazy(() => import('../pages/home'));
-const Todo = lazy(() => import('../pages/todo'));
-const Message = lazy(() => import('../pages/message'));
-const PersonalCenter = lazy(() => import('../pages/personal-center'));
 
 const Footer: FC = () => {
   const navigate = useNavigate();
@@ -83,26 +77,19 @@ const Header: FC = () => {
 
 function Layout() {
   return (
-    <BrowserRouter>
-      <Suspense fallback={<PageLoading />}>
-        <div className={styles.app}>
-          <div className={styles.top}>
-            <Header />
-          </div>
-          <div className={styles.body}>
-            <Routes>
-              <Route path="/home" element={<Home />} />
-              <Route path="/todo" element={<Todo />} />
-              <Route path="/message" element={<Message />} />
-              <Route path="/me" element={<PersonalCenter />} />
-            </Routes>
-          </div>
-          <div className={styles.bottom}>
-            <Footer />
-          </div>
+    <Suspense fallback={<PageLoading />}>
+      <div className={styles.app}>
+        <div className={styles.top}>
+          <Header />
         </div>
-      </Suspense>
-    </BrowserRouter>
+        <div className={styles.body}>
+          <Outlet />
+        </div>
+        <div className={styles.bottom}>
+          <Footer />
+        </div>
+      </div>
+    </Suspense>
   );
 }
 
