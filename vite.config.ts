@@ -7,9 +7,11 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          react: ['react', 'react-dom', 'react-router'],
-          antd: ['antd-mobile'],
+        advancedChunks: {
+          groups: [
+            { name: 'react', test: /\/react(?:-dom|-router)?/ },
+            { name: 'antd', test: /\/antd\/.*/ },
+          ],
         },
       },
     },

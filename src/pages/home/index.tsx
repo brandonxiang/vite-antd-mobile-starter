@@ -6,7 +6,7 @@ interface HomeLoaderData {
 
 function Home() {
   const { message } = useLoaderData() as HomeLoaderData;
-  
+
   return (
     <div>
       <h1>首页</h1>

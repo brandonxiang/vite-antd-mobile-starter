@@ -15,18 +15,16 @@ function ErrorBoundary() {
   console.error('Route error:', error);
 
   return (
-    <div style={{ 
-      padding: '20px', 
-      textAlign: 'center',
-      color: '#d32f2f'
-    }}>
+    <div
+      style={{
+        padding: '20px',
+        textAlign: 'center',
+        color: '#d32f2f',
+      }}
+    >
       <h2>Oops! Something went wrong</h2>
-      <p>
-        {error instanceof Error 
-          ? error.message 
-          : 'An unexpected error occurred'}
-      </p>
-      <button 
+      <p>{error instanceof Error ? error.message : 'An unexpected error occurred'}</p>
+      <button
         onClick={() => window.location.reload()}
         style={{
           padding: '10px 20px',
@@ -34,7 +32,7 @@ function ErrorBoundary() {
           color: 'white',
           border: 'none',
           borderRadius: '4px',
-          cursor: 'pointer'
+          cursor: 'pointer',
         }}
       >
         Reload Page
@@ -51,31 +49,29 @@ const homeLoader = async () => {
 
 const todoLoader = async () => {
   // Example: return fetch('/api/todos').then(res => res.json());
-  return { 
+  return {
     todos: [
       { id: 1, text: 'Learn React Router v7', completed: false },
-      { id: 2, text: 'Implement data mode', completed: true }
-    ]
+      { id: 2, text: 'Implement data mode', completed: true },
+    ],
   };
 };
 
 const messageLoader = async () => {
   // Example: return fetch('/api/messages').then(res => res.json());
-  return { 
-    messages: [
-      { id: 1, from: 'System', text: 'Welcome to the app!', timestamp: new Date() }
-    ]
+  return {
+    messages: [{ id: 1, from: 'System', text: 'Welcome to the app!', timestamp: new Date() }],
   };
 };
 
 const personalCenterLoader = async () => {
   // Example: return fetch('/api/profile').then(res => res.json());
-  return { 
+  return {
     user: {
       name: 'User',
       email: 'user@example.com',
-      avatar: '/default-avatar.png'
-    }
+      avatar: '/default-avatar.png',
+    },
   };
 };
 
@@ -83,13 +79,13 @@ const personalCenterLoader = async () => {
 const todoAction = async ({ request }: { request: Request }) => {
   const formData = await request.formData();
   const action = formData.get('action');
-  
+
   if (action === 'add') {
     const text = formData.get('text');
     // Example: await fetch('/api/todos', { method: 'POST', body: JSON.stringify({ text }) });
     console.log('Adding todo:', text);
   }
-  
+
   return { success: true };
 };
 
@@ -133,4 +129,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]); 
+]);

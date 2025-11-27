@@ -13,20 +13,20 @@ export function LikeButton({ itemId, initialLikes = 0 }: LikeButtonProps) {
 
   const handleLike = () => {
     // Optimistic update
-    setLikes(prev => isLiked ? prev - 1 : prev + 1);
+    setLikes((prev) => (isLiked ? prev - 1 : prev + 1));
     setIsLiked(!isLiked);
 
     // Submit to action without navigation
     fetcher.submit(
-      { 
+      {
         action: 'like',
         itemId,
-        liked: (!isLiked).toString()
+        liked: (!isLiked).toString(),
       },
-      { 
+      {
         method: 'post',
-        action: '/api/like' // This would be handled by a route action
-      }
+        action: '/api/like', // This would be handled by a route action
+      },
     );
   };
 
@@ -47,4 +47,4 @@ export function LikeButton({ itemId, initialLikes = 0 }: LikeButtonProps) {
       {fetcher.state === 'submitting' ? 'Liking...' : `👍 ${likes}`}
     </button>
   );
-} 
+}

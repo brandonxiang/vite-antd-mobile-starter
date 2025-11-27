@@ -1,16 +1,7 @@
 import { FC, Suspense } from 'react';
 import { NavBar, TabBar } from 'antd-mobile';
-import {
-  Outlet,
-  useNavigate,
-  useLocation,
-} from 'react-router';
-import {
-  AppOutline,
-  MessageOutline,
-  UnorderedListOutline,
-  UserOutline,
-} from 'antd-mobile-icons';
+import { Outlet, useNavigate, useLocation } from 'react-router';
+import { AppOutline, MessageOutline, UnorderedListOutline, UserOutline } from 'antd-mobile-icons';
 
 import styles from './index.module.css';
 import { PageLoading } from '../components/page-loading';
