@@ -1,13 +1,13 @@
 import { createBrowserRouter } from 'react-router';
 import { lazy } from 'react';
-import Layout from './layout';
+import Layout from '../layout';
 import { useRouteError } from 'react-router';
 
 // Lazy load page components
-const Home = lazy(() => import('./pages/home'));
-const Todo = lazy(() => import('./pages/todo'));
-const Message = lazy(() => import('./pages/message'));
-const PersonalCenter = lazy(() => import('./pages/personal-center'));
+const Home = lazy(() => import('../pages/home'));
+const Todo = lazy(() => import('../pages/todo'));
+const Message = lazy(() => import('../pages/message'));
+const PersonalCenter = lazy(() => import('../pages/personal-center'));
 
 // Generic Error Boundary Component
 function ErrorBoundary() {
