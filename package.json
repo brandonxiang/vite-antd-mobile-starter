@@ -19,24 +19,24 @@
   },
   "optionalDependencies": {
     "husky": "9.1.7",
-    "lint-staged": "16.1.2"
+    "lint-staged": "16.2.7"
   },
   "dependencies": {
-    "antd-mobile": "^5.41.1",
+    "antd-mobile": "^5.42.3",
     "antd-mobile-icons": "^0.3.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-router": "^7.9.6"
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router": "^7.13.0"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
+    "@vitejs/plugin-react": "^5.1.2",
     "babel-plugin-react-compiler": "^1.0.0",
     "globals": "^16.5.0",
-    "oxfmt": "^0.15.0",
-    "oxlint": "^1.30.0",
+    "oxfmt": "^0.27.0",
+    "oxlint": "^1.42.0",
     "typescript": "^5.9.3",
     "vite": "npm:rolldown-vite@latest",
     "vite-plugin-html": "3.2.2"
