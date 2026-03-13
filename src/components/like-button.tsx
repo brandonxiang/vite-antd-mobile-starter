@@ -17,7 +17,7 @@ export function LikeButton({ itemId, initialLikes = 0 }: LikeButtonProps) {
     setIsLiked(!isLiked);
 
     // Submit to action without navigation
-    fetcher.submit(
+    void fetcher.submit(
       {
         action: 'like',
         itemId,

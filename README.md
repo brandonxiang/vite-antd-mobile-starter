@@ -4,55 +4,75 @@
   </a>
 </p>
 
-# Vite Antd Mobile Starter 😄
+# Vite Antd Mobile Starter
 
-## Why do you use this template
+## Tech Stack
 
-This template is a simplest solution to start up an new SPA.
-
-## What is the key web framework for this template
-
-- [React](https://react.dev/)
-- [React Router](https://reactrouter.com/en/main)
-- [antd-mobile](https://mobile.ant.design/)
-- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/) 19
+- [React Router](https://reactrouter.com/en/main) 7
+- [antd-mobile](https://mobile.ant.design/) 5
+- [Vite+](https://viteplus.dev/) - The Unified Toolchain for the Web
 - [TypeScript](https://www.typescriptlang.org/)
 
-## Start Up
+## Why Vite+
 
-Please use [degit](https://github.com/Rich-Harris/degit) to download template
+Vite+ is a unified toolchain built on top of Vite, providing:
+
+- **One CLI** - All frontend tools in one command: `vp dev`, `vp build`, `vp test`, `vp lint`, `vp fmt`
+- **Rust-powered** - Built with Rolldown, Oxc for blazing fast performance
+- **Built-in testing** - Vitest integrated out of the box
+- **Type-aware linting** - Oxlint with full TypeScript support
+
+## Quick Start
 
 ```bash
-mkdir your-project-name
-cd your-project-name
-npx degit brandonxiang/vite-antd-mobile-starter
+# Install dependencies
+vp install
 
-# or
+# Development
+vp dev
 
-npx degit brandonxiang/vite-antd-mobile-starter your-project-name
+# Build
+vp build
+
+# Lint & Format
+vp check
 ```
 
-## How to Develop
+Or with bun:
 
-```shell
-pnpm i
+```bash
+bun install
+bun run dev
+bun run build
 ```
 
-```shell
-pnpm run dev
+## Project Structure
 
-# http://localhost:3000/
+```
+src/
+├── components/      # Reusable components
+├── pages/           # Page components
+├── router/          # Route configuration
+│   ├── index.tsx   # Router setup
+│   └── routes.tsx  # Route definitions
+├── layout/          # Layout components
+├── App.tsx
+└── main.tsx
 ```
 
-## How to Build
+## Commands
 
-```shell
-# live
-pnpm run build
-```
+| Command | Description |
+|---------|-------------|
+| `vp dev` | Start dev server |
+| `vp build` | Build for production |
+| `vp preview` | Preview production build |
+| `vp test` | Run tests |
+| `vp lint` | Lint code |
+| `vp fmt` | Format code |
+| `vp check` | Run format, lint, and type checks |
 
-## Project Management
+## License
 
-- [husky](https://typicode.github.io/husky/)
-- [lint-staged](https://github.com/lint-staged/lint-staged)
-- [eslint 9](https://eslint.org/)
+MIT

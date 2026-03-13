@@ -13,7 +13,7 @@ const Footer: FC = () => {
 
   const setRouteActive = (value: string) => {
     console.log(value);
-    navigate(value);
+    void navigate(value);
   };
 
   const tabs = [
@@ -58,7 +58,7 @@ const Header: FC = () => {
   return (
     <NavBar
       onBack={() => {
-        navigate(-1);
+        void navigate(-1);
       }}
     >
       配合路由使用
